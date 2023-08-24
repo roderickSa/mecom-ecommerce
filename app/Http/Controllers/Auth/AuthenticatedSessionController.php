@@ -39,8 +39,10 @@ class AuthenticatedSessionController extends Controller
             $url = "/vendor/dashboard";
         }
 
+        $notification = ['message' => 'Login sucessfully', 'alert-type' => "success"];
+
         /* return redirect()->intended(RouteServiceProvider::HOME); */
-        return redirect()->intended($url);
+        return redirect()->intended($url)->with($notification);
     }
 
     /**
