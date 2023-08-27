@@ -25,17 +25,9 @@
                 <div class="menu-title">Brand</div>
             </a>
             <ul>
-                <li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Default</a>
+                <li> <a href="{{ route('all.brand') }}"><i class="bx bx-right-arrow-alt"></i>All Brand</a>
                 </li>
-                <li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
-                </li>
-                <li> <a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
-                </li>
-                <li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital
-                        Marketing</a>
-                </li>
-                <li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human
-                        Resources</a>
+                <li> <a href="{{ route('add.brand') }}"><i class="bx bx-right-arrow-alt"></i>New Brand</a>
                 </li>
             </ul>
         </li>
@@ -43,22 +35,25 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">Category</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+                <li> <a href="{{ route('all.category') }}"><i class="bx bx-right-arrow-alt"></i>All Category</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+                <li> <a href="{{ route('add.category') }}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
                 </li>
-                <li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">SubCategory</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>All SubCategory</a>
                 </li>
-                <li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
-                </li>
-                <li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
-                </li>
-                <li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
-                </li>
-                <li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
+                <li> <a href="{{ route('add.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Add SubCategory</a>
                 </li>
             </ul>
         </li>
@@ -67,18 +62,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">eCommerce</div>
+                <div class="menu-title">Vendors</div>
             </a>
             <ul>
-                <li> <a href="ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>Products</a>
+                <li> <a href="{{ route('all.vendor') }}"><i class="bx bx-right-arrow-alt"></i>All Vendors</a>
                 </li>
-                <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product
-                        Details</a>
-                </li>
-                <li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>Add New
-                        Products</a>
-                </li>
-                <li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>Orders</a>
+                <li> <a href="{{ route('register.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Register Vendor</a>
                 </li>
             </ul>
         </li>
