@@ -1,3 +1,8 @@
+@php
+    $id = Auth::user()->id;
+    $vendor = App\Models\User::find($id);
+@endphp
+
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
@@ -18,79 +23,48 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
-                </div>
-                <div class="menu-title">Brand</div>
-            </a>
-            <ul>
-                <li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Default</a>
-                </li>
-                <li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
-                </li>
-                <li> <a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
-                </li>
-                <li> <a href="dashboard-digital-marketing.html"><i class="bx bx-right-arrow-alt"></i>Digital
-                        Marketing</a>
-                </li>
-                <li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human
-                        Resources</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
-                </div>
-                <div class="menu-title">Application</div>
-            </a>
-            <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
-                </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
-                </li>
-                <li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
-                </li>
-                <li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
-                </li>
-                <li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
-                </li>
-                <li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
-                </li>
-                <li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-label">Charts & Maps</li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-line-chart"></i>
-                </div>
-                <div class="menu-title">Charts</div>
-            </a>
-            <ul>
-                <li> <a href="charts-apex-chart.html"><i class="bx bx-right-arrow-alt"></i>Apex</a>
-                </li>
-                <li> <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Chartjs</a>
-                </li>
-                <li> <a href="charts-highcharts.html"><i class="bx bx-right-arrow-alt"></i>Highcharts</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-map-alt"></i>
-                </div>
-                <div class="menu-title">Maps</div>
-            </a>
-            <ul>
-                <li> <a href="map-google-maps.html"><i class="bx bx-right-arrow-alt"></i>Google Maps</a>
-                </li>
-                <li> <a href="map-vector-maps.html"><i class="bx bx-right-arrow-alt"></i>Vector Maps</a>
-                </li>
-            </ul>
-        </li>
+        @if ($vendor->status == 'active')
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                    </div>
+                    <div class="menu-title">Product Manage</div>
+                </a>
+                <ul>
+                    <li> <a href="{{ route('vendor.all.product') }}"><i class="bx bx-right-arrow-alt"></i>All
+                            Product</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bx-category"></i>
+                    </div>
+                    <div class="menu-title">All Order</div>
+                </a>
+                <ul>
+                    <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+                    </li>
+                    <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank">
+                    <div class="parent-icon"><i class="bx bx-support"></i>
+                    </div>
+                    <div class="menu-title">Support</div>
+                </a>
+            </li>
+        @else
+            <li>
+                <a href="javascript:;" target="_blank">
+                    <div class="parent-icon"><i class="bx bx-support"></i>
+                    </div>
+                    <div class="menu-title">Support</div>
+                </a>
+            </li>
+        @endif
     </ul>
     <!--end navigation-->
 </div>

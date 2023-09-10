@@ -3,7 +3,7 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">All SubCategory</div>
+            <div class="breadcrumb-title pe-3">All Slider</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
@@ -11,14 +11,14 @@
                             <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            All SubCategory
+                            All Slider
                         </li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.subcategory') }}" class="btn btn-primary">Add SubCategory</a>
+                    <a href="{{ route('add.slider') }}" class="btn btn-primary">Add Slider</a>
                 </div>
             </div>
         </div>
@@ -31,29 +31,37 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Category Name</th>
-                                <th>SubCategory Name</th>
+                                <th>Slider Title</th>
+                                <th>Short Title</th>
+                                <th>Slider Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($subcategories as $key => $subcategory)
+                            @foreach ($sliders as $key => $slider)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $subcategory->category->category_name }}</td>
-                                    <td>{{ $subcategory->subcategory_name }}</td>
-                                    <td><a href="{{ route('edit.subcategory', $subcategory->id) }}"
-                                            class="btn btn-info">Edit</a><a
-                                            href="{{ route('delete.subcategory', $subcategory->id) }}" id="delete"
-                                            class="btn btn-danger">Delete</a></td>
+                                    <td>{{ $slider->slider_title }}</td>
+                                    <td>{{ $slider->short_title }}</td>
+                                    <td><img src="{{ asset($slider->slider_image) }}" alt="image"
+                                            style="width:70px;height:40px"></td>
+                                    <td>
+                                        <form action="{{ route('delete.slider', $slider->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{ route('edit.slider', $slider->id) }}" class="btn btn-info">Edit</a>
+                                            <button id="delete-submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>Sl</th>
-                                <th>Category Name</th>
-                                <th>SubCategory Name</th>
+                                <th>Slider Title</th>
+                                <th>Short Title</th>
+                                <th>Slider Image</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>

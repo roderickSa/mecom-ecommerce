@@ -75,4 +75,10 @@ class SubCategoryController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    public function GetSubCategory(string $category_id)
+    {
+        $subcategories = SubCategory::where("category_id", $category_id)->get();
+        return response()->json($subcategories);
+    }
 }
